@@ -47,10 +47,12 @@ Widget yang digunakan di dalam proyek ini:
 
 
 ### 3. Fungsi setState()
-Apa fungsi dari setState()? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.
+setState() berfungsi untuk memberitahu framework bahwa terdapat perubahan pada state yang harus di re-build. Widget yang memanggil fungsi ini akan di re-build sehingga perubahannya bisa dilihat lnagsung oleh pengguna. Namun fungsi ini hanya bisa dilakukan pada StatefulWidget. 
+
+Jika fungsi ini dipanggil, variabel-variabel yang ada di dalam MyhomePage akan terpengaruh pada perubahan yang terjadi.
 
 ### 4. Perbedaan const dan final
-Jelaskan perbedaan antara const dengan final.
+__Final__ dapat digunakan untuk menginisiasi variable yang bersifat _immutable_ dimana nilai variabelnya sudah atau belum diketahui pada saat kompilasi berjalan. Sedangkan __const__ digunakan untuk mendeklarasikan variabel _immutable_ yang nilainya bersifat konstan dan harus sudah diketahui pada saat waktu berjalan, atau dalam artian nilai dari variabel tersebut harus sudah ada sebelum di compile.
 
 ### 5. Cara mengimplementasikan checklist-cechklist tugas 7
 </details>
