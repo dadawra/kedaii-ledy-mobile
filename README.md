@@ -21,10 +21,29 @@ samples, guidance on mobile development, and a full API reference.
 # TUGAS 7
 
 ### 1. Stateless widget & stateful widget
-Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.
+Stateless widget adalah widget statis yang tidak bisa berubah.
+Stateful widget adalah widget dinamis yang dapat berubah tampilannya jika terjadi events baik dari pengaruh user atau ada variabel yang berubah.
+Kedua proses ini sama-sama memiliki proses constructor dan build. __Constructor__ adalah tahap penyusunan setiap state yang akan diterapkan, sedangkan __build__ adalah tahap dimana setiap widget dan state dibangun ke dalam bentuk UI. Yang berbeda adalah, stateful widget memiliki proses internal state. __Internal state__ adalah tahap dimana terdapat pemrosesan state yang dipicu dari adanya penambahan atau perubahan data, jika sistem ini dipicu, maka sistem akan me-render tampilan dari widget terbaru.
 
-### 2. Widget yang digunakan pada proyek ini
-Sebutkan widget apa saja yang kamu gunakan pada proyek ini dan jelaskan fungsinya.
+### 2. Widget 
+Widget yang digunakan di dalam proyek ini:
+1. __Scaffold__, struktur dasar halaman yang menyediakan kerangka dan AppBar dan body. 
+2. __AppBar__, menampilkan judul atau toolbar pada atas halaman.
+3. __Text__, menampilkan teks di layar.
+4. __Padding__, menambahkan jarak di sekitar widget untuk merapikan tata letak.
+5. __Column dan row__, menyusun widget secara vertikan dan horizontal.
+6. __SizedBox__, menambahkan spasi kosong atau mengatur ukuran widget.
+7. __Center__, memusatkan widget di dalam kontainer.
+8. __GridView.count__, menampilkan item dalam bentuk grid dengan jumlah tertentu.
+9. __Card__, membuat tampilan seperti kartu dengan efek bayangan.
+10. __Container__, menampung widget dan memberikan kontrol untuk tata letaknya.
+11. __Mediaquery__, mengambil informasi ukuran layar untuk menyesuaikan layout.
+12. __Material__, memberikan tampilan material pada widget seperti warna dan bayangan.
+13. __InkWell__, menambahkan efek percikan tinta (ripple) sebagai umpan balik visual pada widget.
+14. __ScaffoldMessenger__, menampilkan pesan (SnackBar) di layar sementara.
+15. __SnackBar__, menampilkan pesan sementara.
+16. __Icon__, menampilkan ikon grafis dari _Icons_ dan _IconData_.
+17. __ItemHomepage__, menyimpan data untuk setiap item pada grid.
 
 
 ### 3. Fungsi setState()
