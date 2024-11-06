@@ -55,4 +55,10 @@ Jika fungsi ini dipanggil, variabel-variabel yang ada di dalam MyhomePage akan t
 __Final__ dapat digunakan untuk menginisiasi variable yang bersifat _immutable_ dimana nilai variabelnya sudah atau belum diketahui pada saat kompilasi berjalan. Sedangkan __const__ digunakan untuk mendeklarasikan variabel _immutable_ yang nilainya bersifat konstan dan harus sudah diketahui pada saat waktu berjalan, atau dalam artian nilai dari variabel tersebut harus sudah ada sebelum di compile.
 
 ### 5. Cara mengimplementasikan checklist-cechklist tugas 7
+Pertama, saya membuat proyek Flutter baru dengan command `flutter create kedaii_ledy`, setelah itu merapikan struktur proyek dengan menambahkan `menu.dart` di dalam direktori `lib`. Selanjutnya, mengubah warna tema aplikasi menjadi warna coklat. Setelah itu, buat `MyHomePage` menjadi _stateless_.
+
+Langkah selanjutnya, membuat card sederhana yang berisi NPM, nama, dan kelas di dalam `class MyHomePage`, dan membuat class `InfoCard` untuk mengatur ukuran info card. Setelah itu membuat button untuk card dengan membuat class `ItemHomepage` baru yang akan dimunculkan di `MyHomePage`.  Pada class `ItemCard` dibuat widget dan mengatur style ItemCard. Selanjutnya mengintegrasikan antara InfoCard dan ItemCard ditampilkan di `MyHomePage` di dalam `Widget Build()`.
+
+Terakhir melakukan `flutter analyze` dan jika tidak ada masalah melakukan add, commit dan push.
+
 </details>
