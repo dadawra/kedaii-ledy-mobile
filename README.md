@@ -62,3 +62,52 @@ Langkah selanjutnya, membuat card sederhana yang berisi NPM, nama, dan kelas di 
 Terakhir melakukan `flutter analyze` dan jika tidak ada masalah melakukan add, commit dan push.
 
 </details>
+
+<details>
+<summary> Tugas 8 </summary>
+
+# TUGAS 8
+
+### 1. Fungsi dan apa keuntungan dari menggunakan `const` di Flutter? 
+`const` digunakan untuk mendeklarasikan variabel yang nilainya tidak akan berubah selama kompilasi. Dengan menggunakan `const`, bisa mengoptimalkan kinerja Flutter dengan meningkatkan efisiensi memori, membuat aplikasi jadi lebih cepat, memudahkan dalam pemeliharaan kode, dan mengurangi risiko kesalahan saat melakukan pembaruan. `const` sebaiknya digunakan pada nilai variabel yang tetap dan tidak akan berubah, dan jangan dilakukan pada nilai variabel yang nilainya tidak boleh diubah setelah ditentukan.
+
+### 2. Column dan Row pada Flutter
+Column dan row adalah widget layout yang digunakan untuk mengatur tata letak. Column mengatur widget secara vertikal (satu dibawah yang lain), biasanya digunakan untuk membuat list atau formulir. Row mengatur widget secara horizontal (bersebelahan satu sama lain), biasanya digunakan untuk membuat navbar atau card dengan beberapa elemen yang disusun dari kiri ke kanan.
+
+Contoh column: 
+``` 
+Column(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  children: [
+    Image.asset('images/pic1.jpg'),
+    Image.asset('images/pic2.jpg'),
+    Image.asset('images/pic3.jpg'),
+  ],
+);
+```
+
+Contoh row:
+```
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  children: [
+    Image.asset('images/pic1.jpg'),
+    Image.asset('images/pic2.jpg'),
+    Image.asset('images/pic3.jpg'),
+  ],
+);
+```
+
+### 3. Elemen input yang digunakan pada halaman form di tugas ini, dan apa saja yang tidak digunakan
+Pada *productentry_form.dart* saya menggunakan `TextFormField` untuk menerima input nama, deskripsi, dan jumlah stok produk. Selain itu saya juga menggunakan `ElevatedButton` sebagai tombol save untuk memvalidasi form dan menampilkan dialog jika data produk berhasil disimpan. Beberapa elemen input yang tidak digunakan pada *productentry_form.dart* antara lain `Checbox`, `Radio`, `DropdownButton`, dan `Switch`.
+
+### 4. Cara mengatur tema dalam aplikasi Flutter agar konsisten 
+Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+Iya, saya mengimpelementasikan tema dalam aplikasi yang saya buat. Saya mengatur tema pada aplikasi saya dengan menggunaka `ThemeData` pada `MaterialApp` untuk menerapkan tema global untuk warna aplikasi, yaitu Red. Jika ingin menggunakan warna tersebut, saya tinggal memanggil `color: Theme.of(context).colorScheme.primary,` agar warna sesuai dengan tema aplikasi saya.
+
+### 5. Cara menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter
+Menangani navigasi bisa menggunakan widget `Navigator` yang sudah disediakan oleh Flutter. Widget ini memudahkan kita untuk berpindah antar halaman. `Navigator` cocok untuk struktur halaman yang sederhana. Namun jika struktur halamannya lebih kompleks dan membutuhkan navigasi yang dinamis, maka bisa menggunakan `Navigator 2.0 (Router)`
+
+Sumber : https://docs.flutter.dev/
+
+</details>
