@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kedaii_ledy/menu.dart';
+import 'package:kedaii_ledy/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSwatch(
-              primarySwatch: Colors.brown,
-        ).copyWith(secondary: Colors.brown[800]),
+              primarySwatch: Colors.red,
+        ).copyWith(secondary: Colors.red[800]),
         useMaterial3: true,
       ),
       home: MyHomePage(),
