@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kedaii_ledy/screens/list_productentry.dart';
 import 'package:kedaii_ledy/screens/menu.dart';
 import 'package:kedaii_ledy/screens/productentry_form.dart';
 
@@ -58,10 +59,23 @@ class LeftDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
+                    // ignore: prefer_const_constructors
                     builder: (context) => ProductEntryFormPage(),
                   ));
             },
+            ),
+          ListTile(
+                leading: const Icon(Icons.check_box),
+                title: const Text('Daftar Product'),
+                onTap: () {
+                    // Route menu ke halaman Product
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const ProductEntryPage()),
+                    );
+                },
           ),
+          
         ],
       ),
     );
