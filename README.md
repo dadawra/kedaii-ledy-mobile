@@ -111,3 +111,41 @@ Menangani navigasi bisa menggunakan widget `Navigator` yang sudah disediakan ole
 Sumber : https://docs.flutter.dev/
 
 </details>
+
+<details>
+<summary> Tugas 9 </summary>
+
+# Tugas 9
+
+### 1. Mengapa perlu membuat model untuk melakukan pengambilan dan pengiriman data JSON? 
+karena, jika kita melakukan _request_ ke suatu _web service_ menggunakan __GET__ maupun __POST__, secara umum kita akan mendapatkan hasil pemangggilan berupa JSON. Sehingga perlu untuk kita melakukan konversi data agar Flutter mengenali JSON sebagai object _class_ dan memastikan data JSON memiliki struktur dan keamanan yang baik. Jika tidak membuat model, aplikasi bisa tetap berjalan namun memiliki risiko error pada sistem yang kompleks.
+
+### 2. Fungsi library _http_ pada tugas ini
+_Hypertext Transfer Protocol_ berfungsi untuk melakukan permintaan HTTP, menangani respons dan kesalahan, serta mengambil data dari server, pada tugas ini kita menggunakan JSON.
+
+### 3. Fungsi dari _CookieRequest_ dan mengapa _instanse CookieRequest_ perlu untuk dibagikan ke semua komponen di aplikasi Flutter
+_CookieRequest_ berfungsi untuk menangani autentikasi berbasis cookie antar aplikasi Flutter dan server pada Django. Library ini  akan mengelolas status login, mengelola Cookie, mempermudah HTTP request dan memvalidasi respons dari server. Kita perlu membagikan _instanse CookieRequest_ ke seluruh komponen di aplikasi Flutter agar semua komponen bisa mendapatkan data yang sinkron satu sama lain dan efisiense sehingga tidak terjadi konflik data.
+
+### 4. Mekanisme pengiriman data
+User akan membuka halaman formulir produk, mengisi formulir sesuai dengan tipe data yang diinginkan. Menekan tombol _save_. Ketika tombol _save ditekan, data dari formulir akan divalidasi, jika valid data akan dikirim ke server Django. Data diproses di server dan akan mengembalikan respons JSON. Jika berhasil, pesan berhasil akan ditampilkan dan akan diarahkan ke halaman utama. Jika gagal, pesan kesalahan akan ditampilkan.
+
+### 5. Mekanisme autentikasi
+__LOGIN__
+User akan memasukkan username dan password di form. Data tersebut akan dikirim menggunakan HTTP POST ke endpoint django dan server akan memvalidasi data. Setelah itu akan mengembalikan respon apakah berhasil maupun gagal. Flutter akan menampilkan hasil tersebut kepada user. Jika berhasil login, cookie autentikasi akan disimpan.
+
+__REGISTER__
+User akan menekan tombol _Register_ pada halaman login dan akan diarahkan ke halamn register. User akan memasukkan username dan password baru. Data tersebut akan dikirim menggunakan HTTP POST ke endpoint django dan server akan memvalidasi data. Setelah itu akan mengembalikan respon apakah berhasil maupun gagal. Flutter akan menampilkan hasil tersebut kepada user. Jika berhasil, user akan dikembalikan ke menu Login untuk melakukan Login User. Cookie akan disimpan.
+
+__LOGOUT__
+User akan menekan tombol logout, permintaan logout akan dikirim ke server. Jika berhasil, akan muncul pesan _Sampai Jumpa, $username_ dan user akan diarahkan ke halaman login.
+
+### 6. Bagaimana cara mengimplementasikan tugas diatas step-by-step
+Pertama, saya melakukan integrasi autentikasi pada Django untuk Flutter dengan membuat django-app bernama `authentication` yang akan berisi metode view login, register, dan logout. setelah itu saya melakukan integrasi sistem autentikasi pada Flutter dengan menginstal _package_ yang dibutuhkan dan memodifikasi root wigdet untuk menyediakan `CookieRequest`  ke semua _child widget_ dengan `Provider`. Di Flutter, saya membuat folder _screens_ yang berisi `login.dart`, `register.dart` untuk keperluan autentikasi. File `main.dart` juga diubah menjadi `home: const LoginPage()` agar saat pertama kali memasuki web, user akan langsung ke _login page_.
+
+Untuk integrasi data, saya membuat model kustom dengan bantuan _Quicktype_ dan menambahkan dependensi _HTTP_. Saya juga membuat list_productentry.dart yang berfungsi untuk mengambil data dan membuatnya menjadi list.
+
+Selain itu saya membuat fungsi baru pada Django yang akan menyimpan produk baru yang ditambahkan melalui Flutter. Dan menambahkan validasi baru untuk penambahan ini pada aplikasi Flutter.
+
+Terakhir saya menambahkan metode view logout pada proyek Django dan menambahkan metode ini pada Flutter agar user bisa logout saat menekan tombol logout pada Flutter.
+
+</details>

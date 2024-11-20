@@ -65,7 +65,7 @@ class LeftDrawer extends StatelessWidget {
             },
             ),
           ListTile(
-                leading: const Icon(Icons.check_box),
+                leading: const Icon(Icons.list),
                 title: const Text('Daftar Product'),
                 onTap: () {
                     // Route menu ke halaman Product
